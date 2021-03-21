@@ -1,8 +1,10 @@
-package com.alexjandrohum.appmanageusers;
+package com.alexjandrohum.appmanageusers.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.alexjandrohum.appmanageusers.R;
 
 public class MainActivity extends AppCompatActivity {
 
