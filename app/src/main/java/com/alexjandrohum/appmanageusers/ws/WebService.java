@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 
 public interface WebService {
 
-    @GET("api/users?page=2")
+    @GET("users?page=2")
     Call<ListUsers> getListUsers();
 
     @POST("login")

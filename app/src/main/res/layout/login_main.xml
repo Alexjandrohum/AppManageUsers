@@ -21,7 +21,8 @@
             android:padding="30dp"
             android:text="Bienvenido"
             android:textAlignment="center"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:textColor="@color/black"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -69,11 +70,13 @@
             android:padding="10dp"/>
 
         <TextView
+            android:id="@+id/textViewRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrate si aún no eres parte."
             android:textAlignment="center"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 

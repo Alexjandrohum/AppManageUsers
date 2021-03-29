@@ -2,10 +2,12 @@ package com.alexjandrohum.appmanageusers.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alexjandrohum.appmanageusers.R;
@@ -24,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private LoginUserPresenterImpl userPresenter;
     private TextInputLayout textInputLayoutUser, textInputLayoutPassword;
     private TextInputEditText textInputEditTextUser, textInputEditTextPassword;
+    private TextView textViewRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +40,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textInputEditTextUser = findViewById(R.id.inputTextUser);
         textInputEditTextPassword = findViewById(R.id.inputTextPassword);
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
-
+        textViewRegister = findViewById(R.id.textViewRegister);
 
         btnIniciarSesion.setOnClickListener(this);
+        textViewRegister.setOnClickListener(this);
 
 
     }
@@ -51,6 +55,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnIniciarSesion:
                 login();
                 break;
+            case R.id.textViewRegister:
+                Intent intentRegister = new Intent(this, RegisterActivity.class);
+                startActivity(intentRegister);
         }
     }
 
@@ -75,5 +82,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void obtenerToken(TokenUser tokenUser) {
         Log.i("LOG",tokenUser.toString());
         Toast.makeText(this, "Succefull!!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ListUserActivity.class);
+        startActivity(intent);
     }
 }
